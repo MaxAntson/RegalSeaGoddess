@@ -1,0 +1,9 @@
+--- Training dataset ---
+Size: 12273
+Presence points: 134
+Background points: 12139
+
+--- Testing dataset ---
+Size: 547
+Presence points: 32
+Background points: 515

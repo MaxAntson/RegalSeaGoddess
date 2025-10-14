@@ -1,0 +1,117 @@
+{
+    "DATA": {
+        "SPECIES": {
+            "FOLDER": "../data/gbif",
+            "PRESENCE_DATA_PATH": "raw_rsg_data.csv",
+            "BACKGROUND_DATA_PATH": "background_data.csv"
+        },
+        "ENVIRONMENTAL": {
+            "FOLDER": "../data/environmental",
+            "COASTLINE_DATA_PATH": "ne_10m_coastline/ne_10m_coastline.shp",
+            "BIO_ORACLE": {
+                "FOLDER": "bio_oracle",
+                "BATHYMETRY_FILE": "bathymetry.nc",
+                "CHLOROPHYLL_FILE": "chlorophyll.nc",
+                "MEAN_SST_FILE": "mean_sst.nc",
+                "RANGE_SST_FILE": "range_sst.nc",
+                "SALINITY_FILE": "salinity.nc",
+                "SLOPE_FILE": "slope.nc"
+            }
+        }
+    },
+    "PREPROCESSING": {
+        "COORD_UNCERTAINTY_THRESHOLD": 500,
+        "DROP_NA_COORD_UNCERTAINTY": true,
+        "ACCESSIBLE_AREA": {
+            "PADDING": 2,
+            "MAX_DEPTH": 1000
+        },
+        "SPATIAL_THINNING_MIN_DISTANCE_M": 5000,
+        "ENVIRONMENT_DATA": [
+            "bathymetry",
+            "mean_sst",
+            "range_sst",
+            "salinity",
+            "chlorophyll",
+            "slope",
+            "distance_to_shore_m"
+        ],
+        "DROP_NA_ENVIRONMENTAL": true,
+        "BG_SAMPLE_SIZE": 15000,
+        "MIN_DISTANCE_BETWEEN_PRESENCE_AND_ABSENCE_M": 5000
+    },
+    "DATA_SPLIT": {
+        "MIN_DISTANCE_BETWEEN_TRAIN_AND_TEST_M": 50000,
+        "TEST_PROP": 0.2
+    },
+    "MODEL": {
+        "N_ESTIMATORS": 2600,
+        "MAX_DEPTH": 3,
+        "LEARNING_RATE": 0.01,
+        "SUBSAMPLE": 0.9,
+        "COLSAMPLE_BYTREE": 0.7,
+        "REG_LAMBDA": 7.4,
+        "REG_ALPHA": 9.0,
+        "EARLY_STOPPING_ROUNDS": 50
+    },
+    "OPTIMISATION": {
+        "USE_OPTUNA": true,
+        "N_TRIALS": 1000,
+        "USE_RANDOM_SAMPLER": false,
+        "PARAMS": {
+            "N_ESTIMATORS": {
+                "USE": true,
+                "MIN": 500,
+                "MAX": 5000,
+                "STEP": 100
+            },
+            "MAX_DEPTH": {
+                "USE": true,
+                "MIN": 3,
+                "MAX": 10,
+                "STEP": 1
+            },
+            "LEARNING_RATE": {
+                "USE": true,
+                "MIN": 0.01,
+                "MAX": 0.3,
+                "STEP": 0.01
+            },
+            "SUBSAMPLE": {
+                "USE": true,
+                "MIN": 0.5,
+                "MAX": 1.0,
+                "STEP": 0.1
+            },
+            "COLSAMPLE_BYTREE": {
+                "USE": true,
+                "MIN": 0.5,
+                "MAX": 1.0,
+                "STEP": 0.1
+            },
+            "REG_LAMBDA": {
+                "USE": true,
+                "MIN": 0.0,
+                "MAX": 10.0,
+                "STEP": 0.1
+            },
+            "REG_ALPHA": {
+                "USE": true,
+                "MIN": 0.0,
+                "MAX": 10.0,
+                "STEP": 0.1
+            }
+        }
+    },
+    "PREDICTION": {
+        "THRESHOLD": 0.5060737729072571
+    },
+    "TRAINING": {
+        "SCALE_POS_WEIGHT": true,
+        "NUM_FOLDS": 3,
+        "MIN_DISTANCE_BETWEEN_FOLDS_M": 50000,
+        "VAL_PROP": 0.2
+    },
+    "EXPERIMENT_TITLE": "first_run",
+    "EXPERIMENT_DESCRIPTION": "Ensuring the pipeline can run."
+}
