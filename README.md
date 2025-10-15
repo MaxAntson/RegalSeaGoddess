@@ -8,7 +8,7 @@
 
 ## App Demo
 
-A demonstration of the species distribution model in the accessible area (the video focuses on the Mediterranean). Note that the final plot is still a work in progress - experiments in `src` shall help to finalise this.
+A demonstration of the species distribution model in the accessible area. Note that the final plot is still a work in progress - experiments in `src` shall help to finalise this.
 
 https://github.com/user-attachments/assets/dd116b2d-f017-449e-be5a-172d0e663cd2
 
