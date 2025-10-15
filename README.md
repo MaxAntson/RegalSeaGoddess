@@ -6,6 +6,14 @@
   © 2025 Max Antson</em>
 </p>
 
+## App Demo
+
+A demonstration of the species distribution model in the accessible area (the video focuses on the Mediterranean). Note that the final plot is still a work in progress - experiments in `src` shall help to finalise this.
+
+<video src="./img/app_demo.mov" controls width="600">
+  Your browser does not support the video tag.
+</video>
+
 ## Folder Structure
 
 - The [data](./data/) folder contains all downloaded data sources. Note that these are not saved in the repository due to their large sizes.
