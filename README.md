@@ -10,9 +10,7 @@
 
 A demonstration of the species distribution model in the accessible area (the video focuses on the Mediterranean). Note that the final plot is still a work in progress - experiments in `src` shall help to finalise this.
 
-<video src="./img/app_demo.mov" controls width="600">
-  Your browser does not support the video tag.
-</video>
+https://github.com/user-attachments/assets/dd116b2d-f017-449e-be5a-172d0e663cd2
 
 ## Folder Structure
 
@@ -28,7 +26,7 @@ A demonstration of the species distribution model in the accessible area (the vi
   - [model.json](./deployment/model.json) is the final XGBoost model
   - [threshold.txt](./deployment/threshold.txt) contains the optimised threshold used to assess whether the model prediction is to be classified as 'present' or 'absent'
 - [img](./img/) contains any image data, either used for a few visuals within the notebook or saved as notebook outputs
-  - [nudibranch_map.html](./img/nudibranch_map.html) is generated in the last section of the notebook, showing the probability plot of where the nudibranch could be found, within its accessible area
+  - [nudibranch_map.html](./img/nudibranch_map.html.zip) is generated in the last section of the notebook, showing the probability plot of where the nudibranch could be found, within its accessible area (to view, unzip it)
   - [regal_sea_goddess.jpg](./img/regal_sea_goddess.jpg) is my own image of a regal sea goddess
   - [sampling_bias_selection.jpg](./img/sampling_bias_selection.png) details how I selected the background dataset in GBIF
 - The [notebooks](./notebooks/) folder contains the key initial exploration notebook - [species_distribution_pipeline.ipynb](./notebooks/species_distribution_pipeline.ipynb) - that runs through an entire ML pipeline from initial data processing to creating a local app based on a trained model. Note that `src` then refines this via hyperparameter tuning, proper testing, etc.
